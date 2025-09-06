@@ -32,6 +32,8 @@ jobs:
 
           echo "== Check npm config =="
           npm config list
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Run release
         run: npm run release
         env:
