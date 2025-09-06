@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nolimits4web/Swiper.git"
+    "url": "git@github.com:Khanhxoan/swiper-kylian.git"
   },
   "keywords": [
     "swiper",
@@ -48,7 +48,7 @@
   "author": "khanh xoan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nolimits4web/swiper/issues"
+    "url": "https://github.com/Khanhxoan/swiper-kylian/issues"
   },
   "homepage": "https://swiperjs.com",
   "funding": [
