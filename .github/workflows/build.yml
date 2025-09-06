@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [master, Swiper6, Swiper7, Swiper8]
 jobs:
-  test:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -14,24 +14,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 21.2
+          registry-url: 'https://registry.npmjs.org'
+          always-auth: true
       - name: Install dependencies
         run: npm install
       - name: Run build
         run: npm run build:prod
-      - name: Debug npm token
+      - name: Configure npm authentication
         run: |
-          echo "== Check NODE_AUTH_TOKEN existence =="
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "NODE_AUTH_TOKEN is EMPTY ❌"
-            exit 1
-          else
-            echo "NODE_AUTH_TOKEN is set ✅"
-            # In ra độ dài token thôi, tránh lộ token
-            echo "Token length: ${#NODE_AUTH_TOKEN}"
-          fi
-
-          echo "== Check npm config =="
-          npm config list
+          echo "registry=https://registry.npmjs.org/" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Run release
