@@ -18,6 +18,20 @@ jobs:
         run: npm install
       - name: Run build
         run: npm run build:prod
+      - name: Debug npm token
+        run: |
+          echo "== Check NODE_AUTH_TOKEN existence =="
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "NODE_AUTH_TOKEN is EMPTY ❌"
+            exit 1
+          else
+            echo "NODE_AUTH_TOKEN is set ✅"
+            # In ra độ dài token thôi, tránh lộ token
+            echo "Token length: ${#NODE_AUTH_TOKEN}"
+          fi
+
+          echo "== Check npm config =="
+          npm config list
       - name: Run release
         run: npm run release
         env:
