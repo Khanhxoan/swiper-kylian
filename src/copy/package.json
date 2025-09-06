@@ -1,7 +1,7 @@
 {
-  "name": "swiper",
-  "version": "11.2.10",
-  "description": "Most modern mobile touch slider and framework with hardware accelerated transitions",
+  "name": "swiper-kylian",
+  "version": "0.0.5",
+  "description": "Swiper Kylian",
   "typings": "swiper.d.ts",
   "type": "module",
   "main": "./swiper.mjs",
@@ -169,7 +169,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nolimits4web/Swiper.git"
+    "url": "git@github.com:Khanhxoan/swiper-kylian.git"
   },
   "keywords": [
     "swiper",
@@ -190,10 +190,10 @@
     "vue",
     "slideshow"
   ],
-  "author": "Vladimir Kharlampidi",
+  "author": "khanh xoan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nolimits4web/swiper/issues"
+    "url": "https://github.com/Khanhxoan/swiper-kylian/issues"
   },
   "homepage": "https://swiperjs.com",
   "funding": [
