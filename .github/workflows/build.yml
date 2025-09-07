@@ -20,12 +20,6 @@ jobs:
         run: npm install
       - name: Run build
         run: npm run build:prod
-      - name: Configure npm authentication
-        run: |
-          echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Run release
         run: npm run release
         env:
